@@ -25,18 +25,11 @@ class Solution {
             if(root.left==null && root.right==null)
             {
                 tot+=sum;
-               
             }
-             
-            System.out.println("root value=" +root.val);
-            System.out.println("sum=" + sum);
-            System.out.println("tot="+ tot);
             traverse(root.left);
             traverse(root.right);
             sum=(sum-root.val)/10;
-        }
-
-        
+        }     
     }
     public int sumNumbers(TreeNode root) {
         traverse(root);
