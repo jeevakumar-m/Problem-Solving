@@ -26,7 +26,7 @@ class Solution {
     int isPalindrome(String S) {
         // code here
         int n=S.length();
-        for(int i=0,j=n-1; i<n && j>=0;i++,j--)
+        for(int i=0,j=n-1; i<n/2 && j>=n/2;i++,j--)
         {
             if(S.charAt(i)!=S.charAt(j))
             {
