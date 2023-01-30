@@ -41,47 +41,42 @@ class Solution {
     void rearrange(int arr[], int n) {
         // code here
 
-       ArrayList<Integer> liP = new ArrayList<>();   // For Storing Positive Numbers
-
-        ArrayList<Integer> liN = new ArrayList<>();   // For Storing Negative Numbers
-
+        List<Integer> positive= new ArrayList<Integer>();
+        List<Integer> negative=new ArrayList<Integer>();
         
-
-        for(int i=0;i<n;i++){
-
+        for(int i=0;i<n;i++)
+        {
             if(arr[i]>=0)
-
-                liP.add(arr[i]);
-
+            {
+                positive.add(arr[i]);
+            }
+            else if(arr[i]<0)
+            {
+                negative.add(arr[i]);
+            }
         }
-
         
-
-        for(int i=0;i<n;i++){
-
-            if(arr[i]<0)
-
-                liN.add(arr[i]);
-
-        }
-
         
-
-        int i=0,j=0;
-
-        while(i<n){
-
-            if(j<liP.size())
-
-                arr[i++]=liP.get(j);
-
-            if(j<liN.size())
-
-                arr[i++]=liN.get(j);
-
-            j++;
-
-        }
+        
+       int i=0,j=0;  
+        
+       while(i<n)
+       {
+           if(j<positive.size())
+           {
+            arr[i++]=positive.get(j);
+           
+           
+           }
+          
+           if(j<negative.size())
+           {
+           arr[i++]=negative.get(j);
+           }
+          
+          j++;
+       }
+        
         
        
     }
